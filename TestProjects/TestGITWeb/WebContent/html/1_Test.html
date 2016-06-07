@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Test Html</title>
+<script type="text/javascript">
+function linkClicked(linkElement)
+{	
+	var link = document.getElementById('myLink');
+	alert('Current Class' + linkElement.className);
+	disableLink(linkElement);
+}
+
+function disableLink(linkElement)
+{
+	linkElement.href = "#";
+	linkElement.onclick = "";
+	linkElement.className="myColor link-btn-disabled";
+}
+
+</script>
+<style>
+input[type="text"].required
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	font-style: normal; 
+	font-weight: bold; 	 	
+	background-color: #000099;
+	color: #fff
+}
+
+input[type="text"] .optional
+{  
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	font-style: normal; 
+	font-weight: normal; 
+	background-color: #DDDDAA; 
+	color: #0000FF
+}
+
+a.myColor {
+color: red
+}
+
+a.link-btn-disabled {
+	color: grey;
+	text-decoration:none;
+	pointer-events: none;
+	opacity: .4;
+	filter:alpha(opacity=70);
+	zoom: 1;
+}
+</style>
+</head>
+<body>
+
+<a id="myLink" href="#" class="myColor" onclick="linkClicked(this)">Link</a>
+<br>
+<input type="text" name="User Nmae" id="userName" class="required"></input>
+
+
+
+</body>
+</html>
+
+
+
